@@ -1,13 +1,23 @@
+#include "WindowManager.h"
+#include "Consts.h"
 
-#include <iostream>
-using namespace std;
+WindowManager *windowManager;
 
-int main()
-{
 
-	cout << "first project to clone";
+void cleanUp() {
+	delete windowManager;
+}
 
-	int a;
-	cin >> a;
-	return 0;
+int main() {
+	windowManager = new WindowManager(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
+	windowManager->init();
+
+	windowManager->initTimer();
+	do {
+		float delta = static_cast<float> (windowManager->getDeltaTime());
+
+		windowManager->update(delta);
+	} while (windowManager->closeNotRequested());
+
+	cleanUp();
 }
