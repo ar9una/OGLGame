@@ -12,5 +12,6 @@ public:
 private:
 	float top, bottom, right, left;
 	OrthoCamera* o_orthoCamera;
+	
 };
 

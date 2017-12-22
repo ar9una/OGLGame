@@ -23,7 +23,7 @@ void WindowManager::init() {
 
 	glfwMakeContextCurrent(windowPtr);
 
-	
+	//glewExperimental = true;
 	glewExperimental = static_cast<GLboolean>(true);
 	glewInit();
 
