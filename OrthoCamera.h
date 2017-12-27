@@ -12,14 +12,22 @@ public:
 	float getX() { return position.x; }
 	float getY() { return position.y; }
 
-	glm::mat4 view, projection, combinedMatrix;
+	const glm::mat4& getCombinedMatrix()const { return combinedMatrix; }
+
+	void setLookAt(glm::vec3);
+	void setPosition(glm::vec3 position);
+	void setCamerUp(glm::vec3 up);
 
 	
 private:
-	float nearPlane, farPlane;
+	void initDefaultValues();
 	void updateMatrices();
 
+private:
+	float left, right, top, bottom;
+	float nearPlane, farPlane;
 	glm::vec3 position, lookAt, up;
+	glm::mat4 view, projection, combinedMatrix;
 
 	
 };

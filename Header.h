@@ -14,3 +14,10 @@
 #include "OrthoCamera.h"
 #include "ViewPort.h"
 #include "Screen.h"
+#include "Model.h"
+#include "Consts.h"
+#include "Actor.h"
+#include "Group.h"
+#include "BufferLoader.h"
+
+#include "vector"

@@ -2,7 +2,9 @@
 class Model
 {
 public:
-	Model();
+	Model(unsigned int vaoID,
+		unsigned int numVertices,
+		unsigned int texturId);
 	~Model();
 };
 
